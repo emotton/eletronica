@@ -8,7 +8,7 @@
 
 // Configurações do WiFi
 const char* ssid     = "Liberty- Scorpion"; // Nome da rede WiFi
-const char* password = "numseyMesmo"; // Senha da rede WiFi
+const char* password = "*****"; // Senha da rede WiFi
 
 // Configurações do Servidor NTP
 const char* servidorNTP = "a.st1.ntp.br"; // Servidor NTP para pesquisar a hora
