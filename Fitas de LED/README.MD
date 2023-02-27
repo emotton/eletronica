@@ -1,1 +1,1 @@
-Fitas de LED============Monocolor---------- Branca Quente- Branca Fria- Uma única corColoridas (RGB)---------------
+Fitas de LED============Monocolor---------- Branca Quente- Branca Fria- Uma única corColoridas (RGB)---------------- 3528 (Possui um LED de cada cor)- 5050 (Possui um LED com as 3 cores)
