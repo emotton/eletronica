@@ -1,0 +1,1 @@
+Fitas de LED============Monocolor---------- Branca Quente- Branca Fria- Uma única corColoridas (RGB)---------------
