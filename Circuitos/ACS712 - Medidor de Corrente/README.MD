@@ -1,1 +1,0 @@
-ACS712 - Medição de Corrente============================Utilizando Arduino------------------- https://www.youtube.com/watch?v=kBksXlbFu5QUtilizando ESP-32------------------ https://www.youtube.com/watch?v=ofqvW-8_H2M
