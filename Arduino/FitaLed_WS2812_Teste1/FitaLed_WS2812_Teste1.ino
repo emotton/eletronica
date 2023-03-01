@@ -1,7 +1,7 @@
 #include <FastLED.h>
 
 // How many leds in your strip?
-#define NUM_LEDS 9
+#define NUM_LEDS 10
 
 // For led chips like WS2812, which have a data line, ground, and power, you just
 // need to define DATA_PIN.  For led chipsets that are SPI based (four wires - data, clock,
@@ -68,6 +68,7 @@ void loop() {
   leds[6] = CRGB::Green;
   leds[7] = CRGB::Violet;
   leds[8] = CRGB::OrangeRed;  
+  leds[9] = CRGB(100,0,100); // ROXO
   FastLED.show();
   delay(500);
   // Now turn the LED off, then pause
@@ -80,6 +81,7 @@ void loop() {
   leds[6] = CRGB::Black;
   leds[7] = CRGB::Black;
   leds[8] = CRGB::Black;
+  leds[9] = CRGB::Black;
   FastLED.show();
   delay(500);
 }
