@@ -1,7 +1,7 @@
 #include <FastLED.h>
 
 // How many leds in your strip?
-#define NUM_LEDS 10
+#define NUM_LEDS 90
 
 // For led chips like WS2812, which have a data line, ground, and power, you just
 // need to define DATA_PIN.  For led chipsets that are SPI based (four wires - data, clock,
@@ -12,6 +12,8 @@
 
 // Define the array of leds
 CRGB leds[NUM_LEDS];
+
+CRGB cores[] = { CRGB::Red, CRGB::HotPink, CRGB::Green, CRGB::Blue, CRGB::Yellow, CRGB::AliceBlue, CRGB::Brown, CRGB::Pink, CRGB::OrangeRed, CRGB::Violet };
 
 void setup() { 
     // Uncomment/edit one of the following lines for your leds arrangement.
@@ -58,30 +60,23 @@ void setup() {
 }
 
 void loop() { 
-  // Turn the LED on, then pause
-  leds[0] = CRGB::Red;
-  leds[1] = CRGB::Blue;
-  leds[2] = CRGB::Yellow;
-  leds[3] = CRGB::MediumBlue;
-  leds[4] = CRGB::Brown;
-  leds[5] = CRGB::Pink;
-  leds[6] = CRGB::AliceBlue;
-  leds[7] = CRGB::HotPink;
-  leds[8] = CRGB::OrangeRed;  
-  leds[9] = CRGB(100,0,100); // ROXO
-  FastLED.show();
-  delay(500);
-  // Now turn the LED off, then pause
-  leds[0] = CRGB::Black;
-  leds[1] = CRGB::Black;
-  leds[2] = CRGB::Black;
-  leds[3] = CRGB::Black;
-  leds[4] = CRGB::Black;
-  leds[5] = CRGB::Black;
-  leds[6] = CRGB::Black;
-  leds[7] = CRGB::Black;
-  leds[8] = CRGB::Black;
-  leds[9] = CRGB::Black;
-  FastLED.show();
-  delay(500);
+  for(int cor=0; cor<sizeof(cores); cor++){
+    for(int i=0; i<NUM_LEDS; i++){
+      leds[i] = cores[cor];
+      FastLED.show();
+      delay(20);
+      leds[i] = CRGB::Black;  
+      FastLED.show();
+      delay(20);
+    }
+    for(int i=NUM_LEDS-1; i>=0; i--){
+      leds[i] = cores[cor];
+      FastLED.show();
+      delay(20);
+      leds[i] = CRGB::Black;  
+      FastLED.show();
+      delay(20);
+    }
+  }
+
 }
