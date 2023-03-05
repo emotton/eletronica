@@ -10,12 +10,16 @@
 
 CRGB leds[NUM_LEDS];
 
-CRGB cores[] = { CRGB::Red, CRGB::HotPink, CRGB::Green, CRGB::Blue, CRGB::Yellow, CRGB::AliceBlue, CRGB::Brown, CRGB::Pink, CRGB::OrangeRed, CRGB::Violet };
+CRGB cores[] = { CRGB::Red, CRGB::BurlyWood, CRGB::Green, CRGB::Blue, CRGB::Yellow, CRGB::AliceBlue, CRGB::GreenYellow, CRGB::Pink, CRGB::OrangeRed, CRGB::Violet };
 
-int corAtual = 0;
+int corAtual = -1;
+int qtdeCores = sizeof(cores)/3;
 
 void setup() { 
     FastLED.addLeds<WS2812, DATA_PIN, GRB>(leds, NUM_LEDS);  // GRB ordering is typical
+    Serial.begin(115200);
+    Serial.print(qtdeCores);
+    Serial.println(" cores");
 }
 
 void loop() { 
@@ -24,8 +28,11 @@ void loop() {
 }
 
 void ida(){
+    corAtual++;
+    corAtual = corAtual < qtdeCores ? corAtual : 0;
+    Serial.println(corAtual);
     for(int i=0; i<NUM_LEDS; i++){
-      leds[i] = cores[cor];
+      leds[i] = cores[corAtual];
       FastLED.show();
       delay(20);
       leds[i] = CRGB::Black;  
@@ -36,7 +43,7 @@ void ida(){
 
 void volta(){
     for(int i=NUM_LEDS-1; i>=0; i--){
-      leds[i] = cores[cor];
+      leds[i] = cores[corAtual];
       FastLED.show();
       delay(20);
       leds[i] = CRGB::Black;  
