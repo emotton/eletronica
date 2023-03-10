@@ -1,6 +1,9 @@
 # ESP-32
 Projetos ESP-32
 
+# Wikipedia
+https://en.wikipedia.org/wiki/ESP32
+
 ## CameraWebServer
 
 Gravar utilizando FTDI-RS232 TX-TX/RX-RX no Arduino IDE, utilizando placa ESP32 Dev Module.
