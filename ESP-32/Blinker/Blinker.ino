@@ -22,7 +22,7 @@
   https://www.arduino.cc/en/Tutorial/BuiltInExamples/Blink
 */
 
-LED_BOARD 4
+#define LED_BOARD 4
 
 // the setup function runs once when you press reset or power the board
 void setup() {
